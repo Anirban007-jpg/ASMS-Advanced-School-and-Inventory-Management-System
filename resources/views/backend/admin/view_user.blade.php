@@ -28,7 +28,7 @@
            <div class="box">
               <div class="box-header with-border">
                 <h3 class="box-title">Users List</h3>
-                <a href="" style="float: right;" class="btn btn-rounded btn-success mb-5">Add User</a>
+                <a href="{{ route('user.add') }}" style="float: right;" class="btn btn-rounded btn-success mb-5">Add User</a>
               </div>
               <!-- /.box-header -->
               <div class="box-body">
@@ -59,7 +59,7 @@
                         @foreach ($alladmindata as $key => $admin)
                         <tr>
                             <td>{{ $key+1 }}</td>
-                            <td>{{ $admin->type }}</td>
+                            <td>{{ $admin->usertype }}</td>
                             <td>{{ $admin->name }}</td>
                             <td>{{ $admin->email }}</td>
                             <td>

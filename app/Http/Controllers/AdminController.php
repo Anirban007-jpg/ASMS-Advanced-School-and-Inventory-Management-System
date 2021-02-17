@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use Session;
+use App\Models\Admin;
 
 class AdminController extends Controller
 {
     //
+    
     public function dashboard(){
         return view('admin.index');
     }
