@@ -17,7 +17,7 @@ class AdminController extends Controller
         if ($request->isMethod('post')){
             $data = $request->all();
             if (Auth::guard('admin')->attempt(['email'=>$data['email'], 'password'=>$data['password']])){
-                return redirect('/admin/dashboard');
+                return redirect('admin/dashboard');
             }else{
                 Session::flash('error_message','Invalid Email or Password.');
                 return redirect()->back();

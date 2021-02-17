@@ -29,8 +29,7 @@
 				<div class="row justify-content-center no-gutters">
 					<div class="col-lg-4 col-md-5 col-12">
 						<div class="content-top-agile p-10">
-							<h2 class="text-white">Get started with Us</h2>
-							<p class="text-white-50">Sign in to start your session</p>							
+							<p class="text-white"><b>Sign in as Administrator to start session</b></p>							
 						</div>
 						@if(Session::has('error_message'))
 						<div class="alert alert-danger alert-dismissible fade show" role="alert">

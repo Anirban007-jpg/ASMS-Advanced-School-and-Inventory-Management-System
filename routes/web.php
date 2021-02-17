@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,8 +21,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 Route::group(['prefix' => 'admin'], function(){
     Route::match(['get','post'],'/login',[AdminController::class, 'login'])->name('admin.login');
     Route::group(['middleware'=>['admin']], function(){
@@ -30,3 +29,10 @@ Route::group(['prefix' => 'admin'], function(){
     });
 });
 
+Route::group(['prefix' => 'user'],function(){
+    Route::match(['get','post'],'/login',[UserController::class, 'login'])->name('user.login');
+    Route::group(['middleware'=>['user']], function(){
+        Route::get('/dashboard', [UserController::class, 'dashboard'])->name('user.dashboard');
+        //Route::get('/logout', [AdminController::class, 'logout']);
+    });
+});
