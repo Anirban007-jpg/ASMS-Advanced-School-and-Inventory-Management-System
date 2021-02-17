@@ -16,6 +16,12 @@ class UserController extends Controller
     public function login(Request $request){
         if ($request->isMethod('post')){
             $data = $request->all();
+            
+            $validatedData = $request->validate([
+                'email' => 'required|email',
+                'password' => 'required'
+            ]);
+            
             if (Auth::guard('web')->attempt(['email'=>$data['email'], 'password'=>$data['password']])){
                 //echo "Yes";
                 return redirect('user/dashboard');

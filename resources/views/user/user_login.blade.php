@@ -40,25 +40,41 @@
                             <div class="logo">
                                 <img src="{{ asset('userbackend/panel/assets/images/logo.png') }}" alt="" class="img-fluid">
                             </div>
-                            <form action="" class="d-block" method="post">
+                            <form action="" class="d-block" method="post" novalidate>
                                 @csrf
                                 <div class="form-group icon_parent">
                                     <label for="password">Email</label>
-         <input id="email" type="email" class="form-control"  name="email" value=" " required autocomplete="email" autofocus placeholder="Email Address">
-              <span class="icon_soon_bottom_right"><i class="fas fa-envelope"></i></span>
-                                 
+                                    <input 
+                                        id="email" 
+                                        type="email" 
+                                        class="form-control"  
+                                        name="email" 
+                                        value=" " 
+                                        required 
+                                        autocomplete="email" 
+                                        autofocus 
+                                        placeholder="Email Address"
+                                    />
+                                  <span class="icon_soon_bottom_right"><i class="fas fa-envelope"></i></span>
+                                  @error('email')
+                                    <div class="text-danger"><b>{{ $message }}</b></div>
+                                  @enderror
                                 </div>
+
                                 <div class="form-group icon_parent">
                                     <label for="password">Password</label>
-       <input id="password" type="password" class="form-control"  name="password" required autocomplete="current-password" placeholder="Password">
-                                        
+                                        <input 
+                                        id="password" 
+                                        type="password" 
+                                        class="form-control"  
+                                        name="password" 
+                                        required 
+                                        autocomplete="current-password" 
+                                        placeholder="Password"> 
                                     <span class="icon_soon_bottom_right"><i class="fas fa-unlock"></i></span>
-                                </div>
-                                <div class="form-group">
-                                    <label class="chech_container">Remember me
-                                        <input type="checkbox" name="remember" id="remember" >
-                                        <span class="checkmark"></span>
-                                    </label>
+                                    @error('password')
+											<div class="text-danger"><b>{{ $message }}</b></div>
+									@enderror
                                 </div>
                                 <div class="form-group">
                                     <a class="registration" href=" ">Create new account</a><br>

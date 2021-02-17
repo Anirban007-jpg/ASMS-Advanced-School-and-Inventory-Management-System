@@ -49,6 +49,9 @@
 										</div>
 										<input type="email" name="email" id="email" class="form-control pl-15 bg-transparent text-white plc-white" placeholder="Write Admin Email">
 									</div>
+									@error('email')
+											<div class="text-danger"><b>{{ $message }}</b></div>
+									@enderror
 								</div>
 								<div class="form-group">
 									<div class="input-group mb-3">
@@ -57,6 +60,9 @@
 										</div>
 										<input type="password" name="password" id="password" class="form-control pl-15 bg-transparent text-white plc-white" placeholder="Password">
 									</div>
+									@error('password')
+											<div class="text-danger"><b>{{ $message }}</b></div>
+									@enderror
 								</div>
 								  <div class="row">
 									<div class="col-6">
