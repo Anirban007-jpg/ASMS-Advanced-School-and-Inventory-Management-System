@@ -65,24 +65,18 @@
 									@enderror
 								</div>
 								  <div class="row">
-									<div class="col-6">
-									  <div class="checkbox text-white">
-										<input type="checkbox" id="basic_checkbox_1" >
-										<label for="basic_checkbox_1">Remember Me</label>
-									  </div>
-									</div>
 									<!-- /.col -->
-									<div class="col-6">
+									<div class="col-12">
 									 <div class="fog-pwd text-right">
 										<a href="javascript:void(0)" class="text-white hover-info"><i class="ion ion-locked"></i> Forgot pwd?</a><br>
 									  </div>
+									</div>
 									</div>
 									<!-- /.col -->
 									<div class="col-12 text-center">
 									  <button type="submit" class="btn btn-info btn-rounded mt-10">SIGN IN</button>
 									</div>
 									<!-- /.col -->
-								  </div>
 							</form>														
 
 							<div class="text-center text-white">

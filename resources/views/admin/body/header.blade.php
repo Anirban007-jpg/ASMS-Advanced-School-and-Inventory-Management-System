@@ -10,17 +10,13 @@
 					<i class="nav-link-icon mdi mdi-menu"></i>
 			    </a>
 			</li>
+	
 		  </ul>
 	  </div>
 		
       <div class="navbar-custom-menu r-side">
         <ul class="nav navbar-nav">
-		  <!-- full Screen -->
-	      <li class="search-bar">		  
-			  <div class="lookup lookup-circle lookup-right">
-			     <input type="text" name="s">
-			  </div>
-		  </li>			
+		  <!-- full Screen -->	
 		  
 	      <!-- User Account-->
           <li class="dropdown user user-menu">	

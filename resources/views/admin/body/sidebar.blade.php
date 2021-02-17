@@ -22,7 +22,20 @@
             <i data-feather="pie-chart"></i>
 			<span>Dashboard</span>
           </a>
-        </li>  
+        </li>
+		<li class="treeview">
+			<a href="">
+				<i data-feather="message-circle"></i>
+				<span>Manage User</span>
+				<span class="pull-right-container">
+					<i class="fa fa-angle-right pull-right"></i>
+				</span>
+			</a>
+			<ul class="treeview-menu">
+				<li><a href="{{ route('user.view') }}"><i class="ti-more"></i>View User</a></li>
+				<li><a href=""><i class="ti-more"></i>Add User</a></li>
+			</ul>
+		</li>  
         
       </ul>
     </section>

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\Backend\MainUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +26,9 @@ Route::group(['prefix' => 'admin'], function(){
     Route::match(['get','post'],'/login',[AdminController::class, 'login'])->name('admin.login');
     Route::group(['middleware'=>['admin']], function(){
         Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+        Route::get('/user/view', [MainUserController::class, 'UserView'])->name('user.view');
         Route::get('/logout', [AdminController::class, 'logout']);
+
     });
 });
 
