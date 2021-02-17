@@ -90,8 +90,8 @@
 								</p>	
 							</div>
 							
-							<div class="text-center">
-								<p class="mt-15 mb-0 text-white">Don't have an account? <a href="auth_register.html" class="text-info ml-5">Sign Up</a></p>
+							<div>
+								<a href="{{ url('/') }}" class="text-white hover-info">GO BACK</a>
 							</div>
 						</div>
 					</div>
