@@ -41,7 +41,13 @@ class MainUserController extends Controller
             $data->mobile = $request->mobile;
             $data->password = bcrypt($request->password);
             $data->save();
-            return redirect()->route('user.view');
+
+            $notification = array(
+                'message' => 'User Inserted successfully',
+                'alert-type' => 'success'
+            );
+
+            return redirect()->route('user.view')->with($notification);
         }
         else if ($request->usertype == "Admin" || $request->usertype == "Super-Admin"){
             $data = new Admin();

@@ -36,9 +36,9 @@
                     <table id="example1" class="table table-bordered table-striped">
                       <thead>
                           <tr>
-                              <th>SL No.</th>
                               <th>Role</th>
                               <th>Name</th>
+                              <th>Mobile No</th>
                               <th>Email</th></th>
                               <th>Action</th>
                           </tr>
@@ -46,9 +46,9 @@
                       <tbody>
                         @foreach ($alldata as $key => $user)
                         <tr>
-                            <td>{{ $key+1 }}</td>
                             <td>{{ $user->usertype }}</td>
                             <td>{{ $user->name }}</td>
+                            <td>{{ $user->mobile }}</td>
                             <td>{{ $user->email }}</td>
                             <td>
                                 <a href="" class="btn btn-rounded btn-info mb-5">Edit</a>
@@ -58,9 +58,9 @@
                         @endforeach
                         @foreach ($alladmindata as $key => $admin)
                         <tr>
-                            <td>{{ $key+1 }}</td>
                             <td>{{ $admin->usertype }}</td>
                             <td>{{ $admin->name }}</td>
+                            <td>{{ $admin->mobile }}</td>
                             <td>{{ $admin->email }}</td>
                             <td>
                                 <a href="" class="btn btn-rounded btn-info mb-5">Edit</a>
