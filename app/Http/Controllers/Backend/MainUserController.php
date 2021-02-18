@@ -107,7 +107,29 @@ class MainUserController extends Controller
         );
 
         return redirect()->route('user.view')->with($notification);
-}
+    }
+
+    public function UserDelete($id){
+        $user = User::find($id);
+        $user->delete();
+        $notification = array(
+            'message' => 'User deleted successfully',
+            'alert-type' => 'danger'
+        );
+
+        return redirect()->route('user.view')->with($notification);
+    }
+
+    public function AdminDelete($id){
+        $user = Admin::find($id);
+        $user->delete();
+        $notification = array(
+            'message' => 'User deleted successfully',
+            'alert-type' => 'danger'
+        );
+
+        return redirect()->route('user.view')->with($notification);
+    }
 
 
 }

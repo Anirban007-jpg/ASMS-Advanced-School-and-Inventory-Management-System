@@ -33,6 +33,8 @@ Route::group(['prefix' => 'admin'], function(){
         Route::post('/user/update/{id}', [MainUserController::class, 'UserUpdate'])->name('user.update');
         Route::get('/edit/{id}', [MainUserController::class, 'AdminEdit'])->name('admin.edit');
         Route::post('/update/{id}', [MainUserController::class, 'AdminUpdate'])->name('admin.update');
+        Route::get('/user/delete/{id}', [MainUserController::class, 'UserDelete'])->name('user.delete');
+        Route::get('/delete/{id}', [MainUserController::class, 'AdminDelete'])->name('admin.delete');
         Route::get('/logout', [AdminController::class, 'logout']);
 
     });

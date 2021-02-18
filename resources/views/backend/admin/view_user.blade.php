@@ -52,7 +52,7 @@
                             <td>{{ $user->email }}</td>
                             <td>
                                 <a href="{{ route('user.edit', $user->id) }}" class="btn btn-rounded btn-info mb-5">Edit</a>
-                                <a href="" class="btn btn-rounded btn-danger mb-5">Delete</a>
+                                <a href="{{ route('user.delete', $user->id) }}" class="btn btn-rounded btn-danger mb-5" id="delete">Delete</a>
                             </td>
                         </tr>
                         @endforeach
@@ -64,6 +64,9 @@
                             <td>{{ $admin->email }}</td>
                             <td>
                                 <a href="{{ route('admin.edit', $admin->id) }}" class="btn btn-rounded btn-info mb-5">Edit</a>
+                                @if($admin->usertype == "Admin")
+                                <a href="{{ route('admin.delete', $admin->id) }}" class="btn btn-rounded btn-danger mb-5" id='delete'>Delete</a>
+                                @endif
                             </td>
                         </tr>
                         @endforeach
