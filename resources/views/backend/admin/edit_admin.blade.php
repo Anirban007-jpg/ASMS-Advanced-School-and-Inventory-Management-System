@@ -14,7 +14,7 @@
                <div class="box-body">
                  <div class="row">
                    <div class="col">
-                       <form method="POST" novalidate action="{{ route('admin.update', $editData->id) }}">
+                       <form method="POST" action="{{ route('admin.update', $editData->id) }}" novalidate>
                         @csrf
                          <div class="row">
                            <div class="col-12">	
@@ -55,6 +55,29 @@
                                             </div>
                                         </div>   
                                     </div> 
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <div class="controls">
+                                                <h5>Select User Gender <span class="text-danger">*</span></h5>
+                                                <select name="gender" id="gender" class="form-control">
+                                                    <option value="" selected="" disabled="">Select Role</option>
+                                                    <option value="Male" {{ ($editData->gender == "Male" ? "selected": "") }}>MALE</option>
+                                                    <option value="Female" {{ ($editData->gender == "Female" ? "selected": "") }}>FEMALE</option>
+                                                    <option value="Other" {{ ($editData->gender == "Other" ? "selected": "") }}>OTHER</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <h5>Address <span class="text-danger">*</span></h5>
+                                            <div class="controls">
+                                                <textarea name="address" id="address" rows="6" class="form-control">{{ $editData->address }}</textarea>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 
                            

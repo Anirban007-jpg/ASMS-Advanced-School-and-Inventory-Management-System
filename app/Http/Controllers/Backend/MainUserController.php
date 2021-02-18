@@ -30,7 +30,9 @@ class MainUserController extends Controller
             'usertype' => 'required',
             'name' => 'required',
             'mobile' => 'required|max:11|min:10',
-            'password' => 'required'
+            'password' => 'required',
+            'address' => 'required',
+            'gender' => 'required',
         ]);
 
         if ($request->usertype == "Student"){
@@ -39,6 +41,8 @@ class MainUserController extends Controller
             $data->email = $request->email;
             $data->name = $request->name;
             $data->mobile = $request->mobile;
+            $data->address = $request->address;
+            $data->gender = $request->gender;
             $data->password = bcrypt($request->password);
             $data->save();
 
@@ -55,6 +59,8 @@ class MainUserController extends Controller
             $data->email = $request->email;
             $data->name = $request->name;
             $data->mobile = $request->mobile;
+            $data->address = $request->address;
+            $data->gender = $request->gender;
             $data->password = bcrypt($request->password);
             $data->save();
             $notification = array(
@@ -82,6 +88,8 @@ class MainUserController extends Controller
             $data->email = $request->email;
             $data->name = $request->name;
             $data->mobile = $request->mobile;
+            $data->address = $request->address;
+            $data->gender = $request->gender;
             $data->save();
 
             $notification = array(
@@ -95,10 +103,13 @@ class MainUserController extends Controller
     public function AdminUpdate($id, Request $request){
 
         $data = Admin::find($id);
+        
         $data->usertype = $request->usertype;
         $data->email = $request->email;
         $data->name = $request->name;
         $data->mobile = $request->mobile;
+        $data->address = $request->address;
+        $data->gender = $request->gender;
         $data->save();
 
         $notification = array(
