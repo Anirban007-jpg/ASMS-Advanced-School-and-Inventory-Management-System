@@ -57,8 +57,57 @@ class MainUserController extends Controller
             $data->mobile = $request->mobile;
             $data->password = bcrypt($request->password);
             $data->save();
-            return redirect()->route('user.view');
+            $notification = array(
+                'message' => 'User Inserted successfully',
+                'alert-type' => 'success'
+            );
+            return redirect()->route('user.view')->with($notification);
         }
-
     }
+
+    public function UserEdit($id){
+        $editData = User::find($id);
+        return view('backend.admin.edit_user', compact('editData'));
+    }
+
+    public function AdminEdit($id){
+        $editData = Admin::find($id);
+        return view('backend.admin.edit_admin', compact('editData'));
+    }
+
+    public function UserUpdate($id, Request $request){
+
+            $data = User::find($id);
+            $data->usertype = $request->usertype;
+            $data->email = $request->email;
+            $data->name = $request->name;
+            $data->mobile = $request->mobile;
+            $data->save();
+
+            $notification = array(
+                'message' => 'User Updated successfully',
+                'alert-type' => 'info'
+            );
+
+            return redirect()->route('user.view')->with($notification);
+    }
+
+    public function AdminUpdate($id, Request $request){
+
+        $data = Admin::find($id);
+        $data->usertype = $request->usertype;
+        $data->email = $request->email;
+        $data->name = $request->name;
+        $data->mobile = $request->mobile;
+        $data->save();
+
+        $notification = array(
+            'message' => 'User Updated successfully',
+            'alert-type' => 'info'
+        );
+
+        return redirect()->route('user.view')->with($notification);
+}
+
+
 }

@@ -51,7 +51,7 @@
                             <td>{{ $user->mobile }}</td>
                             <td>{{ $user->email }}</td>
                             <td>
-                                <a href="" class="btn btn-rounded btn-info mb-5">Edit</a>
+                                <a href="{{ route('user.edit', $user->id) }}" class="btn btn-rounded btn-info mb-5">Edit</a>
                                 <a href="" class="btn btn-rounded btn-danger mb-5">Delete</a>
                             </td>
                         </tr>
@@ -63,20 +63,11 @@
                             <td>{{ $admin->mobile }}</td>
                             <td>{{ $admin->email }}</td>
                             <td>
-                                <a href="" class="btn btn-rounded btn-info mb-5">Edit</a>
+                                <a href="{{ route('admin.edit', $admin->id) }}" class="btn btn-rounded btn-info mb-5">Edit</a>
                             </td>
                         </tr>
                         @endforeach
                       </tbody>
-                      <tfoot>
-                          <tr>
-                              <th>SL No.</th>
-                              <th>Role</th>
-                              <th>Name</th>
-                              <th>Email</th></th>
-                              <th>Action</th>
-                          </tr>
-                      </tfoot>
                     </table>
                   </div>
               </div>

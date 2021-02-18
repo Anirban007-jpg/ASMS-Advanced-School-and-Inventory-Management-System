@@ -29,6 +29,10 @@ Route::group(['prefix' => 'admin'], function(){
         Route::get('/user/view', [MainUserController::class, 'UserView'])->name('user.view');
         Route::get('/user/add', [MainUserController::class, 'UserAdd'])->name('user.add');
         Route::post('/user/store', [MainUserController::class, 'UserStore'])->name('user.store');
+        Route::get('/user/edit/{id}', [MainUserController::class, 'UserEdit'])->name('user.edit');
+        Route::post('/user/update/{id}', [MainUserController::class, 'UserUpdate'])->name('user.update');
+        Route::get('/edit/{id}', [MainUserController::class, 'AdminEdit'])->name('admin.edit');
+        Route::post('/update/{id}', [MainUserController::class, 'AdminUpdate'])->name('admin.update');
         Route::get('/logout', [AdminController::class, 'logout']);
 
     });
