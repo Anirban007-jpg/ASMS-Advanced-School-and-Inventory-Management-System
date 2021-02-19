@@ -35,7 +35,7 @@ class MainUserController extends Controller
             'gender' => 'required',
         ]);
 
-        if ($request->usertype == "Student" || $request->usertype == "Customer"){
+        if ($request->usertype == "Student" || $request->usertype == "Customer" || $request->usertype == "Employee"){
             $data = new User();
             $data->usertype = $request->usertype;
             $data->email = $request->email;

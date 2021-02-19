@@ -25,6 +25,7 @@
                                                 <option value="" selected="" disabled="">Select Role</option>
                                                 <option value="Admin">Admin</option>
                                                 <option value="Student">Student</option>
+                                                <option value="Employee">Employee</option>
                                                 <option value="Super-Admin">Super-Admin</option>
                                                 <option value="Teacher">Teacher</option>
                                                 <option value="Customer">Customer</option>

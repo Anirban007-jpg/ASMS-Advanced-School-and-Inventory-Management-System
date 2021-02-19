@@ -24,13 +24,28 @@ $route = Route::current()->getName();
       <!-- sidebar menu-->
       <ul class="sidebar-menu" data-widget="tree">  
 		  
+		<li class="header nav-small-cap" style="color:  rgb(22, 236, 69);"><strong>General</strong>
 		<li class=" {{ ($route == 'admin.dashboard') ? 'active' : '' }} ">
           <a href="{{ url('/admin/dashboard') }}">
             <i data-feather="pie-chart"></i>
 			<span>Dashboard</span>
           </a>
         </li>
+		<li class="treeview {{ ($route == 'profile.view') || ($route == 'password.change') || ($route == 'profile.edit') ? 'active' : '' }} ">
+			<a href="">
+				<i data-feather="mail"></i>
+				<span>Manage Profile</span>
+				<span class="pull-right-container">
+					<i class="fa fa-angle-right pull-right"></i>
+				</span>
+			</a>
+			<ul class="treeview-menu">
+				<li><a href="{{ route('profile.view') }}"><i class="ti-more"></i>Your Profile</a></li>
+				<li><a href="{{ route('password.change') }}"><i class="ti-more"></i>Change Password</a></li>
+			</ul>
+		</li>
 		@if(Auth('admin')->user()->usertype == 'Super-Admin')
+		<li class="header nav-small-cap" style="color:  rgb(22, 236, 69);"><b>For School Management System</b></li>
 		<li class="treeview {{ ($route == 'user.view') || ($route == 'user.add') || ($route == 'user.edit') ? 'active' : '' }} ">
 			<a href="">
 				<i data-feather="message-circle"></i>
@@ -71,19 +86,7 @@ $route = Route::current()->getName();
 			</ul>
 		</li>   
 		@endif
-        <li class="treeview {{ ($route == 'profile.view') || ($route == 'password.change') || ($route == 'profile.edit') ? 'active' : '' }} ">
-			<a href="">
-				<i data-feather="mail"></i>
-				<span>Manage Profile</span>
-				<span class="pull-right-container">
-					<i class="fa fa-angle-right pull-right"></i>
-				</span>
-			</a>
-			<ul class="treeview-menu">
-				<li><a href="{{ route('profile.view') }}"><i class="ti-more"></i>Your Profile</a></li>
-				<li><a href="{{ route('password.change') }}"><i class="ti-more"></i>Change Password</a></li>
-			</ul>
-		</li>  
+          
       </ul>
     </section>
 	
