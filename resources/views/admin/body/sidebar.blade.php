@@ -30,8 +30,8 @@ $route = Route::current()->getName();
 			<span>Dashboard</span>
           </a>
         </li>
-		{{-- {{ dd(Auth('admin')->user()->type) }} --}}
-		<li class="treeview {{ ($route == 'user.view') ? 'active' : '' }} ">
+		@if(Auth('admin')->user()->usertype == 'Super-Admin')
+		<li class="treeview {{ ($route == 'user.view') || ($route == 'user.add') ? 'active' : '' }} ">
 			<a href="">
 				<i data-feather="message-circle"></i>
 				<span>Manage User</span>
@@ -44,7 +44,8 @@ $route = Route::current()->getName();
 				<li><a href="{{ route('user.add') }}"><i class="ti-more"></i>Add User</a></li>
 			</ul>
 		</li>  
-        <li class="treeview {{ ($route == 'profile.view') ? 'active' : '' }} ">
+		@endif
+        <li class="treeview {{ ($route == 'profile.view') || ($route == 'password.change') ? 'active' : '' }} ">
 			<a href="">
 				<i data-feather="mail"></i>
 				<span>Manage Profile</span>
