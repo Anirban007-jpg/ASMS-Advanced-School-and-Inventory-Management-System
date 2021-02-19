@@ -47,7 +47,7 @@
 			</a>
 			<ul class="treeview-menu">
 				<li><a href="{{ route('profile.view') }}"><i class="ti-more"></i>Your Profile</a></li>
-				<li><a href=""><i class="ti-more"></i>Change Password</a></li>
+				<li><a href="{{ route('password.change') }}"><i class="ti-more"></i>Change Password</a></li>
 			</ul>
 		</li>  
       </ul>

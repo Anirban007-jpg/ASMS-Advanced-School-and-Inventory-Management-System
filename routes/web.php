@@ -38,6 +38,8 @@ Route::group(['prefix' => 'admin'], function(){
         Route::get('/delete/{id}', [MainUserController::class, 'AdminDelete'])->name('admin.delete');
         Route::get('/profile/view', [ProfileController::class, 'AdminProfileView'])->name('profile.view');
         Route::get('/profile/edit', [ProfileController::class, 'AdminProfileEdit'])->name('profile.edit');
+        Route::get('/password/change', [ProfileController::class, 'PasswordChange'])->name('password.change');
+        Route::post('/password/update', [ProfileController::class, 'PasswordUpdate'])->name('password.update');
         Route::post('/profile/update', [ProfileController::class, 'AdminProfileUpdate'])->name('profile.update');
         Route::get('/logout', [AdminController::class, 'logout']);
 
