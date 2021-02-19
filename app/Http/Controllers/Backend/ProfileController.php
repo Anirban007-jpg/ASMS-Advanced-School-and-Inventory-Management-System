@@ -73,7 +73,11 @@ class ProfileController extends Controller
             Auth::guard('admin')->logout();
             return redirect('/admin/login');
         }else{
-            return redirect()->back();
+            $notification = array(
+                'message' => 'User Current Password does not match',
+                'alert-type' => 'error'
+            );
+            return redirect()->back()->with($notification);
         }
     }
 }
