@@ -31,7 +31,7 @@ $route = Route::current()->getName();
           </a>
         </li>
 		@if(Auth('admin')->user()->usertype == 'Super-Admin')
-		<li class="treeview {{ ($route == 'user.view') || ($route == 'user.add') ? 'active' : '' }} ">
+		<li class="treeview {{ ($route == 'user.view') || ($route == 'user.add') || ($route == 'user.edit') ? 'active' : '' }} ">
 			<a href="">
 				<i data-feather="message-circle"></i>
 				<span>Manage User</span>
@@ -43,9 +43,22 @@ $route = Route::current()->getName();
 				<li><a href="{{ route('user.view') }}"><i class="ti-more"></i>View User</a></li>
 				<li><a href="{{ route('user.add') }}"><i class="ti-more"></i>Add User</a></li>
 			</ul>
-		</li>  
+		</li> 
+		<li class="treeview {{ ($route == 'student.class.view') || ($route == 'student.class.add') ? 'active' : '' }}">
+			<a href="">
+				<i data-feather="file"></i>
+				<span>Class Management</span>
+				<span class="pull-right-container">
+					<i class="fa fa-angle-right pull-right"></i>
+				</span>
+			</a>
+			<ul class="treeview-menu">
+				<li><a href=" {{ route('student.class.view') }} "><i class="ti-more"></i>Student Class</a></li>
+				{{-- <li><a href=""><i class="ti-more"></i>Add User</a></li> --}}
+			</ul>
+		</li>   
 		@endif
-        <li class="treeview {{ ($route == 'profile.view') || ($route == 'password.change') ? 'active' : '' }} ">
+        <li class="treeview {{ ($route == 'profile.view') || ($route == 'password.change') || ($route == 'profile.edit') ? 'active' : '' }} ">
 			<a href="">
 				<i data-feather="mail"></i>
 				<span>Manage Profile</span>

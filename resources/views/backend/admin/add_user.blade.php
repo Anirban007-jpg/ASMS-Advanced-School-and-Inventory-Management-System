@@ -72,7 +72,7 @@
                                             <div class="controls">
                                                 <h5>Select User Gender <span class="text-danger">*</span></h5>
                                                 <select name="gender" id="gender" class="form-control">
-                                                    <option value="" selected="" disabled="">Select Role</option>
+                                                    <option value="" selected="" disabled="">Select Gender</option>
                                                     <option value="Male">MALE</option>
                                                     <option value="Female">FEMALE</option>
                                                     <option value="Other">OTHER</option>

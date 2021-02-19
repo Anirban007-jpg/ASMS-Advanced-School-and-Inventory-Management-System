@@ -64,7 +64,7 @@
 
                     
                            <div class="text-xs-right">
-                               <input type="submit" class="btn btn-rounded btn-info mb-5" value="Submit" />
+                               <input type="submit" class="btn btn-rounded btn-info mb-5" value="Update" />
                                <input type="reset" class="btn btn-rounded btn-danger mb-5" value="Reset" />
                            </div>
                        </form>

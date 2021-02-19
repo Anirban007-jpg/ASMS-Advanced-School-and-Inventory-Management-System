@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Backend\MainUserController;
 use App\Http\Controllers\Backend\ProfileController;
+use App\Http\Controllers\Backend\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +42,10 @@ Route::group(['prefix' => 'admin'], function(){
         Route::get('/password/change', [ProfileController::class, 'PasswordChange'])->name('password.change');
         Route::post('/password/update', [ProfileController::class, 'PasswordUpdate'])->name('password.update');
         Route::post('/profile/update', [ProfileController::class, 'AdminProfileUpdate'])->name('profile.update');
+        Route::get('/student/class/view', [StudentController::class, 'ViewStudentClass'])->name('student.class.view');
+        Route::get('/student/class/add', [StudentController::class, 'AddStudentClass'])->name('student.class.add');
+        Route::post('/student/class/store', [StudentController::class, 'StoreStudentClass'])->name('student.class.store');
+        Route::get('/student/class/delete/{id}', [StudentController::class, 'DeleteStudentClass'])->name('student.class.delete');
         Route::get('/logout', [AdminController::class, 'logout']);
 
     });
