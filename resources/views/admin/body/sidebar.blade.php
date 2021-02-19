@@ -57,6 +57,19 @@ $route = Route::current()->getName();
 				{{-- <li><a href=""><i class="ti-more"></i>Add User</a></li> --}}
 			</ul>
 		</li>   
+		<li class="treeview {{ ($route == 'student.year.view') || ($route == 'student.year.add') || ($route == 'student.year.edit')  ? 'active' : '' }}">
+			<a href="">
+				<i data-feather="file"></i>
+				<span>Year Management</span>
+				<span class="pull-right-container">
+					<i class="fa fa-angle-right pull-right"></i>
+				</span>
+			</a>
+			<ul class="treeview-menu">
+				<li><a href=" {{ route('student.year.view') }} "><i class="ti-more"></i>Student Year</a></li>
+				{{-- <li><a href=""><i class="ti-more"></i>Add User</a></li> --}}
+			</ul>
+		</li>   
 		@endif
         <li class="treeview {{ ($route == 'profile.view') || ($route == 'password.change') || ($route == 'profile.edit') ? 'active' : '' }} ">
 			<a href="">

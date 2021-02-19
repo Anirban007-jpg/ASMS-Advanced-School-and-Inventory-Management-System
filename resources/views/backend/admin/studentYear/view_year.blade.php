@@ -6,12 +6,12 @@
       <div class="content-header">
           <div class="d-flex align-items-center">
               <div class="mr-auto">
-                  <h3 class="page-title">Student Class List</h3>
+                  <h3 class="page-title">Student Year List</h3>
                   <div class="d-inline-block align-items-center">
                       <nav>
                           <ol class="breadcrumb">
                               <li class="breadcrumb-item"><a href="#"><i class="mdi mdi-home-outline"></i></a></li>
-                              <li class="breadcrumb-item" aria-current="page">Classes</li>
+                              <li class="breadcrumb-item" aria-current="page">Year</li>
                           </ol>
                       </nav>
                   </div>
@@ -48,10 +48,11 @@
                             <td>{{ $student->name }}</td>
                             <td>
                               @if(Auth('admin')->user()->usertype == 'Super-Admin')
-                                <a href="{{ route('student.class.delete', $student->id) }}" class="btn btn-rounded btn-danger mb-5" id="delete">Delete</a>
+                              <a href="{{ route('student.year.edit', $student->id) }}" class="btn btn-rounded btn-info mb-5">Edit</a>
+                              <a href="{{ route('student.year.delete', $student->id) }}" class="btn btn-rounded btn-danger mb-5" id="delete">Delete</a>
+                              @endif
                                 {{-- {{ route('user.delete', $user->id) }} --}}
                                 {{-- {{ route('student.class.edit', $student->id) }} --}}
-                              @endif
                             </td>
                         </tr>
                         @endforeach

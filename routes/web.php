@@ -46,6 +46,12 @@ Route::group(['prefix' => 'admin'], function(){
         Route::get('/student/class/add', [StudentController::class, 'AddStudentClass'])->name('student.class.add');
         Route::post('/student/class/store', [StudentController::class, 'StoreStudentClass'])->name('student.class.store');
         Route::get('/student/class/delete/{id}', [StudentController::class, 'DeleteStudentClass'])->name('student.class.delete');
+        Route::get('/student/year/view', [StudentController::class, 'ViewStudentYear'])->name('student.year.view');
+        Route::get('/student/year/add', [StudentController::class, 'AddStudentYear'])->name('student.year.add');
+        Route::post('/student/year/store', [StudentController::class, 'StoreStudentYear'])->name('student.year.store');
+        Route::get('/student/year/edit/{id}', [StudentController::class, 'EditStudentYear'])->name('student.year.edit');
+        Route::post('/student/year/update/{id}', [StudentController::class, 'UpdateStudentYear'])->name('student.year.update');
+        Route::get('/student/year/delete/{id}', [StudentController::class, 'DeleteStudentYear'])->name('student.year.delete');
         Route::get('/logout', [AdminController::class, 'logout']);
 
     });
