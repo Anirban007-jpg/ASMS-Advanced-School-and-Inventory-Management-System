@@ -15,7 +15,7 @@ $route = Route::current()->getName();
 				  <!-- logo for regular state and mobile devices -->
 					 <div class="d-flex align-items-center justify-content-center">					 	
 						  <img src="{{ asset('adminbackend/images/logo-dark.png')}}" alt="">
-						  <h3><b>Sunny</b> Admin</h3>
+						  <h3><b>Admin</b></h3>
 					 </div>
 				</a>
 			</div>
@@ -56,7 +56,10 @@ $route = Route::current()->getName();
 			</a>
 			<ul class="treeview-menu">
 				@if(Auth('admin')->user()->is_email_verified == 0)
-					<li><a href="{{ route('verify.user') }}"><i class="ti-more"></i>Verify User</a></li>
+					<li><a href="{{ route('verify.user') }}"><i class="ti-more"></i>Verify User through Verification Code</a></li>
+				@endif
+				@if(Auth('admin')->user()->is_phone_verified == 0)
+					<li><a href=""><i class="ti-more"></i>Verify Phone Number</a></li>
 				@endif
 			</ul>
 		</li> 
@@ -76,7 +79,10 @@ $route = Route::current()->getName();
 			<ul class="treeview-menu">
 				<li><a href="{{ route('verify.email') }}"><i class="ti-more"></i>Verify Email</a></li>
 				@if(Auth('admin')->user()->is_email_verified == 0)
-					<li><a href="{{ route('verify.user') }}"><i class="ti-more"></i>Verify User</a></li>
+					<li><a href="{{ route('verify.user') }}"><i class="ti-more"></i>Verify Email through Verification Code</a></li>
+				@endif
+				@if(Auth('admin')->user()->is_phone_verified == 0)
+					<li><a href=""><i class="ti-more"></i>Verify Phone Number</a></li>
 				@endif
 			</ul>
 		</li> 

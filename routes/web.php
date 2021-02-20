@@ -57,7 +57,6 @@ Route::group(['prefix' => 'admin'], function(){
         Route::get('/verify/user', [EmailController::class, 'VerifyUser'])->name('verify.user');
         Route::post('/verified/user', [EmailController::class, 'VerifiedUser'])->name('verified.user');
         Route::get('/logout', [AdminController::class, 'logout']);
-
     });
 });
 
