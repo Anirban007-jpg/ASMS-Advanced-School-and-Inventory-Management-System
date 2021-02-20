@@ -44,8 +44,44 @@ $route = Route::current()->getName();
 				<li><a href="{{ route('password.change') }}"><i class="ti-more"></i>Change Password</a></li>
 			</ul>
 		</li>
+		
+		@if(Auth('admin')->user()->usertype == 'Admin')
+		<li class="treeview {{ ($route == 'verify.user') ? 'active' : '' }} ">
+			<a href="">
+				<i data-feather="message-circle"></i>
+				<span>Verify Email</span>
+				<span class="pull-right-container">
+					<i class="fa fa-angle-right pull-right"></i>
+				</span>
+			</a>
+			<ul class="treeview-menu">
+				@if(Auth('admin')->user()->is_email_verified == 0)
+					<li><a href="{{ route('verify.user') }}"><i class="ti-more"></i>Verify User</a></li>
+				@endif
+			</ul>
+		</li> 
+		@endif
+
 		@if(Auth('admin')->user()->usertype == 'Super-Admin')
-		<li class="header nav-small-cap" style="color:  rgb(22, 236, 69);"><b>For School Management System</b></li>
+
+		<li class="header nav-small-cap" style="color:  rgb(22, 236, 69);"><b>Account Details Verification</b></li>
+		<li class="treeview {{ ($route == 'verify.email') || ($route == 'verify.user') ? 'active' : '' }} ">
+			<a href="">
+				<i data-feather="message-circle"></i>
+				<span>Verify Email</span>
+				<span class="pull-right-container">
+					<i class="fa fa-angle-right pull-right"></i>
+				</span>
+			</a>
+			<ul class="treeview-menu">
+				<li><a href="{{ route('verify.email') }}"><i class="ti-more"></i>Verify Email</a></li>
+				@if(Auth('admin')->user()->is_email_verified == 0)
+					<li><a href="{{ route('verify.user') }}"><i class="ti-more"></i>Verify User</a></li>
+				@endif
+			</ul>
+		</li> 
+
+		<li class="header nav-small-cap" style="color:  rgb(22, 236, 69);"><b>For School Use</b></li>
 		<li class="treeview {{ ($route == 'user.view') || ($route == 'user.add') || ($route == 'user.edit') ? 'active' : '' }} ">
 			<a href="">
 				<i data-feather="message-circle"></i>
@@ -84,7 +120,8 @@ $route = Route::current()->getName();
 				<li><a href=" {{ route('student.year.view') }} "><i class="ti-more"></i>Student Year</a></li>
 				{{-- <li><a href=""><i class="ti-more"></i>Add User</a></li> --}}
 			</ul>
-		</li>   
+		</li>
+   
 		@endif
           
       </ul>

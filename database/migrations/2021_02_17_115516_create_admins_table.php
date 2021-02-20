@@ -19,7 +19,9 @@ class CreateAdminsTable extends Migration
             $table->string('usertype')->default('Super-Admin');
             $table->string('mobile')->nullable();
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
+            $table->integer('is_email_verified')->default(0);
+            $table->integer('is_phone_verified')->default(0);
+            $table->string('email_verification_code')->nullable();
             $table->string('image')->nullable();
             $table->longText('address')->nullable();
             $table->string('gender')->nullable();

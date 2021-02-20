@@ -6,7 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\Backend\MainUserController;
 use App\Http\Controllers\Backend\ProfileController;
 use App\Http\Controllers\Backend\StudentController;
-
+use App\Http\Controllers\Backend\EmailController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -52,6 +52,10 @@ Route::group(['prefix' => 'admin'], function(){
         Route::get('/student/year/edit/{id}', [StudentController::class, 'EditStudentYear'])->name('student.year.edit');
         Route::post('/student/year/update/{id}', [StudentController::class, 'UpdateStudentYear'])->name('student.year.update');
         Route::get('/student/year/delete/{id}', [StudentController::class, 'DeleteStudentYear'])->name('student.year.delete');
+        Route::get('/verify/email', [EmailController::class, 'VerifyEmail'])->name('verify.email');
+        Route::post('/send/email', [EmailController::class, 'SendEmail'])->name('send.email');
+        Route::get('/verify/user', [EmailController::class, 'VerifyUser'])->name('verify.user');
+        Route::post('/verified/user', [EmailController::class, 'VerifiedUser'])->name('verified.user');
         Route::get('/logout', [AdminController::class, 'logout']);
 
     });

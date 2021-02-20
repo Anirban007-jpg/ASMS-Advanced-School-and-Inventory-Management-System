@@ -3,6 +3,20 @@
 <div class="content-wrapper">
     <div class="container-full">
 
+        @if (Auth('admin')->user()->is_email_verified == 0)
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Please Verify</strong> your email and phone number as soon as possible.
+                {{-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> --}}
+          </div>
+        @elseif (Auth('admin')->user()->is_email_verified == 0)
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Please Verify</strong> your phone number as soon as possible.
+                {{-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> --}}
+            </div>
+        @else
+          <div class="text success"><strong>Thank You for verifying your email and phone number</strong></div>
+        @endif
+
       <!-- Main content -->
       <section class="content">
           <div class="row">
