@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\MainUserController;
 use App\Http\Controllers\Backend\ProfileController;
 use App\Http\Controllers\Backend\StudentController;
 use App\Http\Controllers\Backend\EmailController;
+use App\Http\Controllers\Backend\PhoneController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -56,6 +57,8 @@ Route::group(['prefix' => 'admin'], function(){
         Route::post('/send/email', [EmailController::class, 'SendEmail'])->name('send.email');
         Route::get('/verify/user', [EmailController::class, 'VerifyUser'])->name('verify.user');
         Route::post('/verified/user', [EmailController::class, 'VerifiedUser'])->name('verified.user');
+        Route::get('/verify/phone', [PhoneController::class, 'VerifyPhone'])->name('verify.phone');
+        Route::post('/phone/send', [PhoneController::class, 'SendPhone'])->name('phone.send');
         Route::get('/logout', [AdminController::class, 'logout']);
     });
 });

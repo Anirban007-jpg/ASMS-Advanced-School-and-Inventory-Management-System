@@ -41,7 +41,9 @@ $route = Route::current()->getName();
 			</a>
 			<ul class="treeview-menu">
 				<li><a href="{{ route('profile.view') }}"><i class="ti-more"></i>Your Profile</a></li>
-				<li><a href="{{ route('password.change') }}"><i class="ti-more"></i>Change Password</a></li>
+				@if(Auth('admin')->user()->is_email_verified == 1)
+					<li><a href="{{ route('password.change') }}"><i class="ti-more"></i>Change Password</a></li>
+				@endif
 			</ul>
 		</li>
 		
@@ -71,7 +73,7 @@ $route = Route::current()->getName();
 		<li class="treeview {{ ($route == 'verify.email') || ($route == 'verify.user') ? 'active' : '' }} ">
 			<a href="">
 				<i data-feather="message-circle"></i>
-				<span>Verify Email</span>
+				<span>Verify Account Details</span>
 				<span class="pull-right-container">
 					<i class="fa fa-angle-right pull-right"></i>
 				</span>
@@ -81,9 +83,10 @@ $route = Route::current()->getName();
 				@if(Auth('admin')->user()->is_email_verified == 0)
 					<li><a href="{{ route('verify.user') }}"><i class="ti-more"></i>Verify Email through Verification Code</a></li>
 				@endif
-				@if(Auth('admin')->user()->is_phone_verified == 0)
-					<li><a href=""><i class="ti-more"></i>Verify Phone Number</a></li>
-				@endif
+					<li><a href="{{ route('verify.phone') }}"><i class="ti-more"></i>Verify Registered Mobile</a></li>
+				{{-- @if(Auth('admin')->user()->is_phone_verified == 0)
+					<li><a href=""><i class="ti-more"></i>Verify Phone Number Verification code</a></li>
+				@endif --}}
 			</ul>
 		</li> 
 

@@ -7,13 +7,13 @@
             <!-- Basic Forms -->
              <div class="box">
                <div class="box-header with-border">
-                 <h4 class="box-title">Send Verification Mail</h4>
+                 <h4 class="box-title">Send Verification Code</h4>
             </div>
                <!-- /.box-header -->
                <div class="box-body">
                  <div class="row">
                    <div class="col">
-                       <form method="POST" novalidate action="{{ route('send.email') }}">
+                       <form method="POST" novalidate action="{{ route('phone.send') }}">
                         @csrf
                          <div class="row">
                            <div class="col-12">	
@@ -36,14 +36,13 @@
                                     </div>    
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <h5>Registered Email <span class="text-danger">*</span></h5>
+                                            <h5>Registered Phone No <span class="text-danger">*</span></h5>
                                             <div class="controls">
-                                                <input type="email" name="email" id="email" class="form-control">      
+                                                <input type="text" name="mobile" id="mobile" class="form-control">      
                                             </div>
                                         </div>
                                     </div>    
                                </div>
-
                     
                            <div class="text-xs-right">
                                <input type="submit" class="btn btn-rounded btn-info mb-5" value="Send Verifcation Code" />
