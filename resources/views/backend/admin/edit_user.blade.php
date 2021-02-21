@@ -29,6 +29,9 @@
                                                 <option value="Customer"{{ ($editData->usertype == "Customer" ? "selected": "") }}>Customer</option>
                                             </select>
                                     </div>	
+                                    @error('usertype')
+                                        <span class="text-danger"><strong>{{ $message }}</strong></span>
+                                    @enderror      
                                    </div>
                                    <div class="col-md-6">
                                        <div class="form-group">
@@ -37,6 +40,9 @@
                                                <input type="email" name="email" id="email" value="{{ $editData->email }}" class="form-control">
                                            </div>
                                         </div>
+                                        @error('email')
+                                            <span class="text-danger"><strong>{{ $message }}</strong></span>
+                                        @enderror  
                                     </div>
                                 </div>
                                <div class="row">
@@ -46,6 +52,9 @@
                                             <div class="controls">
                                                 <input type="text" name="name" value="{{ $editData->name }}" id="name" class="form-control">
                                             </div>
+                                            @error('name')
+                                                <span class="text-danger"><strong>{{ $message }}</strong></span>
+                                            @enderror  
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -54,6 +63,9 @@
                                             <div class="controls">
                                                 <input type="text" name="mobile" value="{{ $editData->mobile }}" id="mobile" class="form-control">
                                             </div>
+                                            @error('mobile')
+                                            <span class="text-danger"><strong>{{ $message }}</strong></span>
+                                        @enderror  
                                         </div>   
                                     </div> 
                                 </div>
@@ -69,6 +81,9 @@
                                                     <option value="Other" {{ ($editData->gender == "Other" ? "selected": "") }}>OTHER</option>
                                                 </select>
                                             </div>
+                                            @error('gender')
+                                            <span class="text-danger"><strong>{{ $message }}</strong></span>
+                                        @enderror  
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -77,6 +92,9 @@
                                         <div class="controls">
                                             <textarea name="address" id="address" rows="6" class="form-control">{{ $editData->address }}</textarea>
                                         </div>
+                                        @error('address')
+                                        <span class="text-danger"><strong>{{ $message }}</strong></span>
+                                    @enderror  
                                     </div>
                                 </div>
                             </div>

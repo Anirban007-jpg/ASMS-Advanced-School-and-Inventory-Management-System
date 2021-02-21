@@ -34,6 +34,9 @@
                                                <input type="email" name="email" id="email" value="{{ $admin->email }}" class="form-control">
                                            </div>
                                         </div>
+                                        @error('email')
+                                        <span class="text-danger"><strong>{{ $message }}</strong></span>
+                                    @enderror  
                                     </div>
                                 </div>
                                <div class="row">
@@ -44,6 +47,9 @@
                                                 <input type="text" name="name" value="{{ $admin->name }}" id="name" class="form-control">
                                             </div>
                                         </div>
+                                        @error('name')
+                                        <span class="text-danger"><strong>{{ $message }}</strong></span>
+                                    @enderror  
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
@@ -51,6 +57,9 @@
                                             <div class="controls">
                                                 <input type="text" name="mobile" value="{{ $admin->mobile }}" id="mobile" class="form-control">
                                             </div>
+                                            @error('mobile')
+                                            <span class="text-danger"><strong>{{ $message }}</strong></span>
+                                        @enderror 
                                         </div>   
                                     </div> 
                                 </div>
@@ -61,6 +70,9 @@
                                             <div class="controls">
                                                 <textarea name="address" id="address" rows="3" class="form-control">{{ $admin->address }}</textarea>
                                             </div>
+                                            @error('address')
+                                            <span class="text-danger"><strong>{{ $message }}</strong></span>
+                                        @enderror 
                                         </div>
                                     </div>
                                 </div>
@@ -71,6 +83,9 @@
                                                     <h5>Profile Image <span class="text-danger">*</span></h5>
                                                     <input type="file" name="image" id="image" class="form-control" />
                                                 </div>
+                                                @error('image')
+                                                <span class="text-danger"><strong>{{ $message }}</strong></span>
+                                            @enderror 
                                             </div>
                                         </div>
                                     </div>

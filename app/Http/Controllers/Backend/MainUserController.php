@@ -83,6 +83,16 @@ class MainUserController extends Controller
 
     public function UserUpdate($id, Request $request){
 
+             $validatedData = $request->validate([
+                'email' => 'required|email|unique:users',
+                'usertype' => 'required',
+                'name' => 'required',
+                'mobile' => 'required|max:11|min:10',
+                'password' => 'required',
+                'address' => 'required',
+                'gender' => 'required',
+                ]);
+
             $data = User::find($id);
             $data->usertype = $request->usertype;
             $data->email = $request->email;
@@ -102,6 +112,16 @@ class MainUserController extends Controller
 
     public function AdminUpdate($id, Request $request){
 
+        $validatedData = $request->validate([
+            'email' => 'required|email|unique:users',
+            'usertype' => 'required',
+            'name' => 'required',
+            'mobile' => 'required|max:11|min:10',
+            'password' => 'required',
+            'address' => 'required',
+            'gender' => 'required',
+            ]);
+            
         $data = Admin::find($id);
         
         $data->usertype = $request->usertype;

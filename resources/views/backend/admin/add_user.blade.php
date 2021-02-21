@@ -31,6 +31,9 @@
                                                 <option value="Customer">Customer</option>
                                             </select>
                                     </div>	
+                                    @error('usertype')
+                                            <span class="text-danger"><strong>{{ $message }}</strong></span>
+                                    @enderror 
                                    </div>
                                    <div class="col-md-6">
                                        <div class="form-group">
@@ -39,6 +42,9 @@
                                                <input type="email" name="email" id="email" class="form-control">
                                            </div>
                                         </div>
+                                        @error('email')
+                                            <span class="text-danger"><strong>{{ $message }}</strong></span>
+                                        @enderror 
                                     </div>
                                 </div>
                                <div class="row">
@@ -49,6 +55,9 @@
                                                 <input type="text" name="name" id="name" class="form-control">
                                             </div>
                                         </div>
+                                        @error('name')
+                                            <span class="text-danger"><strong>{{ $message }}</strong></span>
+                                        @enderror 
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
@@ -67,6 +76,9 @@
                                                 <input type="password" name="password" id="password" class="form-control">
                                             </div>
                                         </div>
+                                        @error('password')
+                                            <span class="text-danger"><strong>{{ $message }}</strong></span>
+                                        @enderror 
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
@@ -80,6 +92,9 @@
                                                 </select>
                                             </div>
                                         </div>
+                                        @error('gender')
+                                        <span class="text-danger"><strong>{{ $message }}</strong></span>
+                                        @enderror 
                                     </div>
                                 </div>
                                 <div class="row">
@@ -90,6 +105,9 @@
                                                 <textarea name="address" id="address" rows="6" class="form-control"></textarea>
                                             </div>
                                         </div>
+                                        @error('address')
+                                            <span class="text-danger"><strong>{{ $message }}</strong></span>
+                                        @enderror 
                                     </div>
                                     
                             </div>

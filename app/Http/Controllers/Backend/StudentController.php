@@ -63,7 +63,7 @@ class StudentController extends Controller
 
     public function StoreStudentYear(Request $request){
         $validatedData = $request->validate([
-            'name' => 'required|unique:student_classes,name'
+            'name' => 'required|unique:student_years,name'
         ]);
 
         $data = new StudentYear();
@@ -79,6 +79,11 @@ class StudentController extends Controller
     }
 
     public function UpdateStudentYear($id, Request $request){
+
+        $validatedData = $request->validate([
+            'name' => 'required|unique:student_years,name'
+        ]);
+
       $updatedData = StudentYear::find($id);
       $updatedData->name = $request->name;
       
@@ -91,5 +96,16 @@ class StudentController extends Controller
 
     return redirect()->route('student.year.view')->with($notification);
       
+    }
+
+    public function DeleteStudentYear($id){
+        $user = StudentYear::find($id);
+        $user->delete();
+        $notification = array(
+            'message' => 'Year deleted successfully',
+            'alert-type' => 'danger'
+        );
+
+        return redirect()->route('student.year.view')->with($notification);
     }
 }
