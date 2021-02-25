@@ -22,7 +22,7 @@ class CreateAdminsTable extends Migration
             $table->integer('is_email_verified')->default(0);
             $table->integer('is_phone_verified')->default(0);
             $table->string('email_verification_code')->nullable();
-            $table->integer('verification_code')->nullable();
+            $table->integer('code')->nullable();
             $table->string('image')->nullable();
             $table->longText('address')->nullable();
             $table->string('gender')->nullable();

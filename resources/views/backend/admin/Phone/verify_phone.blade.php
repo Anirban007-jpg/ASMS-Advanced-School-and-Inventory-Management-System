@@ -20,29 +20,15 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <h5>User Role <span class="text-danger">*</span></h5>
-                                            <div class="controls">
-                                                <select name="usertype" id="usertype" class="form-control">
-                                                    <option value="" selected="" disabled="">Select Role</option>
-                                                    <option value="Admin">Admin</option>
-                                                    <option value="Student">Student</option>
-                                                    <option value="Employee">Employee</option>
-                                                    <option value="Super-Admin">Super-Admin</option>
-                                                    <option value="Teacher">Teacher</option>
-                                                    <option value="Customer">Customer</option>
-                                                </select>      
-                                            </div>
-                                        </div>
-                                    </div>    
-                                    <div class="col-md-6">
-                                        <div class="form-group">
                                             <h5>Registered Phone No <span class="text-danger">*</span></h5>
                                             <div class="controls">
                                                 <input type="text" name="mobile" id="mobile" class="form-control">      
                                             </div>
                                         </div>
-                                    </div>    
+                                    </div>
+                                 
                                </div>
+                              
                     
                            <div class="text-xs-right">
                                <input type="submit" class="btn btn-rounded btn-info mb-5" value="Send Verifcation Code" />

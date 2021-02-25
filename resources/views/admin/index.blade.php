@@ -5,14 +5,14 @@
 
         @if (Auth('admin')->user()->is_email_verified == 0)
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <strong>Please Verify</strong> your <a href="{{ route('verify.email') }}">email</a> and phone number as soon as possible.
+                <strong>Please Verify</strong> your email and phone number as soon as possible. Contact Super Administrator and inform him to send your verification code.
                 {{-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> --}}
           </div>
         {{-- @elseif (Auth('admin')->user()->is_phone_verified == 0)
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 <strong>Please Verify</strong> your phone number as soon as possible.
                 {{-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> --}}
-            </div> --}}
+            </div> 
         @else
             <div></div>
         @endif
